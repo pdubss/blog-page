@@ -1,6 +1,6 @@
-import { Button } from "@mui/material";
+import { Link } from "@mui/material";
 
-const CategoryTag: React.FC<{ type: string }> = (props) => {
+const CategoryTag: React.FC<{ type: string; key: string }> = (props) => {
   let tagColor;
   switch (props.type) {
     case "BASEBALL":
@@ -18,13 +18,15 @@ const CategoryTag: React.FC<{ type: string }> = (props) => {
   }
 
   return (
-    <Button
-      variant="contained"
+    <Link
       sx={{ bgcolor: tagColor }}
-      onClick={() => alert("You clicked me!")}
+      onClick={(e) => {
+        e.stopPropagation();
+        alert("You clicked the tag!");
+      }}
     >
       {props.type}
-    </Button>
+    </Link>
   );
 };
 

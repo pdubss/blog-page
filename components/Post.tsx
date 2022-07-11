@@ -6,14 +6,13 @@ const Post: React.FC<{
   title: string;
   category: string;
   image?: string;
+  key: string;
 }> = (props) => {
   return (
-    <div className={styles.card}>
-      <a href={`/blog-post${props.id}`}>
-        <img src={props.image}></img>
-        <h2>{props.title}</h2>
-        <CategoryTag type={props.category}></CategoryTag>
-      </a>
+    <div onClick={() => alert("You clicked the div!")} className={styles.card}>
+      <img src={props.image}></img>
+      <h2>{props.title}</h2>
+      <CategoryTag key={props.id} type={props.category}></CategoryTag>
     </div>
   );
 };

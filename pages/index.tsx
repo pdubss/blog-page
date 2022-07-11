@@ -50,6 +50,7 @@ const Home: NextPage = () => {
         <section className={styles.latest}>
           {
             <Post
+              key={latest.id}
               id={latest.id}
               title={latest.title}
               category={latest.category}
@@ -60,6 +61,7 @@ const Home: NextPage = () => {
         <section className={styles.secondary}>
           {theRest.map((post) => (
             <Post
+              key={post.id}
               id={post.id}
               title={post.title}
               category={post.category}
