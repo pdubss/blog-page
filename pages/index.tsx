@@ -2,14 +2,13 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
-import baseball1 from "../images/baseball1.jpg";
 
 const postPlaceholder = [
   {
     id: "1",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    category: "Baseball",
+    category: "BASEBALL",
     image:
       "https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/cuqotciu4extbppy1dkt.jpg",
   },
@@ -17,19 +16,19 @@ const postPlaceholder = [
     id: "2",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    category: "Coding",
+    category: "CODING",
   },
   {
     id: "3",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    category: "Philosophy",
+    category: "PHILOSOPHY",
   },
   {
     id: "4",
     title:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    category: "Politics",
+    category: "POLITICS",
   },
 ];
 
