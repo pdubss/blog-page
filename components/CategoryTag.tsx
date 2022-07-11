@@ -1,6 +1,8 @@
 import { Link } from "@mui/material";
+import { useRouter } from "next/router";
 
 const CategoryTag: React.FC<{ type: string; key: string }> = (props) => {
+  const router = useRouter();
   let tagColor;
   switch (props.type) {
     case "BASEBALL":

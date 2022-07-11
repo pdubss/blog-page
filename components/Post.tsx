@@ -1,5 +1,6 @@
 import styles from "../styles/Home.module.css";
 import CategoryTag from "./CategoryTag";
+import { useRouter } from "next/router";
 
 const Post: React.FC<{
   id: string;
@@ -8,8 +9,12 @@ const Post: React.FC<{
   image?: string;
   key: string;
 }> = (props) => {
+  const router = useRouter();
   return (
-    <div onClick={() => alert("You clicked the div!")} className={styles.card}>
+    <div
+      onClick={() => router.push(`post-${props.id}`)}
+      className={styles.card}
+    >
       <img src={props.image}></img>
       <h2>{props.title}</h2>
       <CategoryTag key={props.id} type={props.category}></CategoryTag>
