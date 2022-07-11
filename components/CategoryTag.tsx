@@ -19,10 +19,16 @@ const CategoryTag: React.FC<{ type: string; key: string }> = (props) => {
 
   return (
     <Link
-      sx={{ bgcolor: tagColor }}
+      href={`/${props.type}-posts`}
+      sx={{
+        bgcolor: tagColor,
+        color: "white",
+        padding: "0.25rem 0.5rem",
+        borderRadius: "5px",
+        textDecoration: "none",
+      }}
       onClick={(e) => {
         e.stopPropagation();
-        alert("You clicked the tag!");
       }}
     >
       {props.type}
