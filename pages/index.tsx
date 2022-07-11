@@ -1,26 +1,40 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
+import baseball1 from "../images/baseball1.jpg";
 
 const postPlaceholder = [
   {
-    title: "Post 1",
-    blurb:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et posuere lorem, at tristique arcu.",
+    id: "1",
+    title:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    category: "Baseball",
+    image:
+      "https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/cuqotciu4extbppy1dkt.jpg",
   },
   {
-    title: "Post 2",
-    blurb:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et posuere lorem, at tristique arcu.",
+    id: "2",
+    title:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    category: "Coding",
   },
   {
-    title: "Post 3",
-    blurb:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et posuere lorem, at tristique arcu.",
+    id: "3",
+    title:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    category: "Philosophy",
+  },
+  {
+    id: "4",
+    title:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    category: "Politics",
   },
 ];
+
+const latest = postPlaceholder[0];
+const theRest = postPlaceholder.filter((post) => post.id !== "1");
 
 const Home: NextPage = () => {
   return (
@@ -34,23 +48,29 @@ const Home: NextPage = () => {
         <h1>My Blog Post</h1>
       </header>
       <main className={styles.main}>
-        {postPlaceholder.map((post) => (
-          <Post title={post.title} blurb={post.blurb}></Post>
-        ))}
-        <button>Load More</button>
+        <section className={styles.latest}>
+          {
+            <Post
+              id={latest.id}
+              title={latest.title}
+              category={latest.category}
+              image={latest.image}
+            ></Post>
+          }
+        </section>
+        <section className={styles.secondary}>
+          {theRest.map((post) => (
+            <Post
+              id={post.id}
+              title={post.title}
+              category={post.category}
+            ></Post>
+          ))}
+        </section>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        Powered by lots of tears and coffee
       </footer>
     </div>
   );
