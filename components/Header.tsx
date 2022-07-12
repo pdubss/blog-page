@@ -12,8 +12,8 @@ const Header: React.FC<{ children: React.ReactNode }> = (props) => {
           boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography variant="h4" sx={{ color: "black", fontWeight:600, }}>
+        <Toolbar sx={{ justifyContent: "space-between", padding: "1rem" }}>
+          <Typography variant="h4" sx={{ color: "black", fontWeight: 300 }}>
             Perry's Blog Project
           </Typography>
           <div>
