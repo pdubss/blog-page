@@ -12,7 +12,7 @@ const Post: React.FC<{
   const router = useRouter();
   return (
     <div
-      onClick={() => router.push(`post-${props.id}`)}
+      onClick={() => router.push(`posts/${props.id}`)}
       className={styles.card}
     >
       <img src={props.image}></img>

@@ -21,7 +21,7 @@ const CategoryTag: React.FC<{ type: string; key: string }> = (props) => {
 
   return (
     <Link
-      href={`/${props.type}-posts`}
+      href={`/posts/${props.type}`}
       sx={{
         bgcolor: tagColor,
         color: "white",
