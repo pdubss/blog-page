@@ -43,9 +43,7 @@ const Home: NextPage = () => {
         <meta name="description" content="My own personal blog project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.header}>
-        <h1>My Blog Post</h1>
-      </header>
+
       <main className={styles.main}>
         <section className={styles.latest}>
           {
