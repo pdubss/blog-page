@@ -4,6 +4,18 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
 
+export const getStaticProps = async () => {
+  const response = await fetch(
+    "https://blogpage-posts-default-rtdb.firebaseio.com/posts.json"
+  );
+  const data = await response.json();
+  console.log(data);
+
+  return {
+    props: { posts: data },
+  };
+};
+
 const postPlaceholder = [
   {
     id: "1",

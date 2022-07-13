@@ -1,6 +1,6 @@
 import { Link } from "@mui/material";
 
-const HeaderLink: React.FC<{ children: string, href:string }> = (props) => {
+const HeaderLink: React.FC<{ children: string; href: string }> = (props) => {
   return (
     <Link
       href={props.href}
@@ -9,7 +9,7 @@ const HeaderLink: React.FC<{ children: string, href:string }> = (props) => {
         padding: "1rem",
         textDecoration: "none",
         fontSize: "20px",
-        "&:hover": { color: "red" },
+        "&:hover": { color: "#D3D3D3", textDecoration: "underline" },
       }}
     >
       {props.children}
