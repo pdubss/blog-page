@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Post from "../components/Post";
+import styles from "../../styles/Home.module.css";
+import Post from "../../components/Post";
 
 const postPlaceholder = [
   {
@@ -67,10 +67,6 @@ const Home: NextPage = () => {
           ))}
         </section>
       </main>
-
-      <footer className={styles.footer}>
-        Powered by lots of tears and coffee
-      </footer>
     </div>
   );
 };
