@@ -16,8 +16,8 @@ const Header: React.FC = () => {
           Perry's Blog Project
         </Typography>
         <div>
-          <HeaderLink>Home</HeaderLink>
-          <HeaderLink>About</HeaderLink>
+          <HeaderLink href="">Home</HeaderLink>
+          <HeaderLink href="about">About</HeaderLink>
         </div>
       </Toolbar>
     </AppBar>

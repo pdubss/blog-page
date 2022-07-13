@@ -3,8 +3,14 @@
 //   const data = await response.json();
 // };
 
-const postPage = () => {
-  return <div>Welcome to my WIP post page</div>;
+import Layout from "../../components/Layout";
+
+const postPage: React.FC = () => {
+  return (
+    <Layout>
+      <main>PLEASE RENDER YOU BASTARDS</main>
+    </Layout>
+  );
 };
 
 export default postPage;
