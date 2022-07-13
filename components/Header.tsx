@@ -5,6 +5,7 @@ import HeaderLink from "./HeaderLink";
 const Header: React.FC = () => {
   return (
     <AppBar
+      position="sticky"
       sx={{
         bgcolor: "white",
         borderBottom: "1px solid #D3D3D3",

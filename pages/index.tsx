@@ -1,34 +1,36 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
 
 const postPlaceholder = [
   {
     id: "1",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    title: "Thoughts on the 2022 MLB All-Star Game",
     category: "BASEBALL",
     image:
       "https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/cuqotciu4extbppy1dkt.jpg",
   },
   {
     id: "2",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    title: "My Journey in Building This Site",
     category: "CODING",
   },
   {
     id: "3",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    title: "Why Existentialism is Sad but Necessary",
     category: "PHILOSOPHY",
   },
   {
     id: "4",
-    title:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    title: "The Complexity of the Issue of Abortion in America",
     category: "POLITICS",
+  },
+  {
+    id: "5",
+    title: "The Joys of Using Libraries and Frameworks",
+    category: "CODING",
   },
 ];
 
@@ -65,6 +67,7 @@ const Home: NextPage = () => {
               category={post.category}
             ></Post>
           ))}
+          <Link href="/all">All Posts</Link>
         </section>
       </main>
     </div>
