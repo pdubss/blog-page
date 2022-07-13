@@ -3,7 +3,7 @@ import { Link } from "@mui/material";
 const HeaderLink: React.FC<{ children: string, href:string }> = (props) => {
   return (
     <Link
-      href={`/${props.href}`}
+      href={props.href}
       sx={{
         color: "black",
         padding: "1rem",

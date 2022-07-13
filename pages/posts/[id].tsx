@@ -4,13 +4,10 @@
 // };
 
 import Layout from "../../components/Layout";
+import styles from "../../styles/Home.module.css";
 
 const postPage: React.FC = () => {
-  return (
-    <Layout>
-      <main>PLEASE RENDER YOU BASTARDS</main>
-    </Layout>
-  );
+  return <main className={styles.main}>This is the detailed post page</main>;
 };
 
 export default postPage;
