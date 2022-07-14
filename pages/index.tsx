@@ -1,55 +1,25 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
 
-export const getStaticProps = async () => {
-  const response = await fetch(
-    "https://blogpage-posts-default-rtdb.firebaseio.com/posts.json"
-  );
-  const data = await response.json();
-  console.log(data);
-
-  return {
-    props: { posts: data },
-  };
+type PostProps = {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
 };
 
-const postPlaceholder = [
-  {
-    id: "1",
-    title: "Thoughts on the 2022 MLB All-Star Game",
-    category: "BASEBALL",
-    image:
-      "https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w1536/mlb/cuqotciu4extbppy1dkt.jpg",
-  },
-  {
-    id: "2",
-    title: "My Journey in Building This Site",
-    category: "CODING",
-  },
-  {
-    id: "3",
-    title: "Why Existentialism is Sad but Necessary",
-    category: "PHILOSOPHY",
-  },
-  {
-    id: "4",
-    title: "The Complexity of the Issue of Abortion in America",
-    category: "POLITICS",
-  },
-  {
-    id: "5",
-    title: "The Joys of Using Libraries and Frameworks",
-    category: "CODING",
-  },
-];
+const Home: NextPage<{ data: PostProps[] }> = (props) => {
+  console.log(props.data);
+  const dataArray = Object.entries(props.data);
+  console.log(dataArray);
+  for (const entry in dataArray) {
+    console.log(entry);
+  }
 
-const latest = postPlaceholder[0];
-const theRest = postPlaceholder.filter((post) => post.id !== "1");
-
-const Home: NextPage = () => {
+  // const theRest = props.filter((post) => post.id !== 1);
   return (
     <div className={styles.container}>
       <Head>
@@ -60,30 +30,54 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <section className={styles.latest}>
-          {
+          {/* {
             <Post
-              key={latest.id}
-              id={latest.id}
+              key={latest.id.toString()}
+              id={latest.id.toString()}
               title={latest.title}
               category={latest.category}
               image={latest.image}
             ></Post>
-          }
+          } */}
         </section>
         <section className={styles.secondary}>
-          {theRest.map((post) => (
+          {/* {theRest.map((post) => (
             <Post
-              key={post.id}
-              id={post.id}
+              key={post.id.toString()}
+              id={post.id.toString()}
               title={post.title}
               category={post.category}
             ></Post>
-          ))}
+          ))} */}
           <Link href="/all">All Posts</Link>
         </section>
       </main>
     </div>
   );
+};
+
+// export async function getStaticPaths(){
+//   return {
+//     fallback:false,
+//     paths:[
+//       {
+//         params: {
+//           postId
+//         }
+//       }
+//     ]
+//   }
+// }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch(
+    "https://blogpage-posts-default-rtdb.firebaseio.com/posts.json"
+  );
+  const data = await response.json();
+
+  return {
+    props: { data },
+  };
 };
 
 export default Home;
