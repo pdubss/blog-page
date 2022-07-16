@@ -13,13 +13,11 @@ type PostProps = {
 
 const Home: NextPage<{ data: PostProps[] }> = (props) => {
   console.log(props.data);
-  const dataArray = Object.entries(props.data);
-  console.log(dataArray);
-  for (const entry in dataArray) {
-    console.log(entry);
-  }
+  const postArray = Object.values(props.data);
+  console.log(postArray);
+  const latest = postArray[0];
+  const theRest = postArray.filter((post) => post.id !== 1);
 
-  // const theRest = props.filter((post) => post.id !== 1);
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +28,7 @@ const Home: NextPage<{ data: PostProps[] }> = (props) => {
 
       <main className={styles.main}>
         <section className={styles.latest}>
-          {/* {
+          {
             <Post
               key={latest.id.toString()}
               id={latest.id.toString()}
@@ -38,17 +36,17 @@ const Home: NextPage<{ data: PostProps[] }> = (props) => {
               category={latest.category}
               image={latest.image}
             ></Post>
-          } */}
+          }
         </section>
         <section className={styles.secondary}>
-          {/* {theRest.map((post) => (
+          {theRest.map((post) => (
             <Post
               key={post.id.toString()}
               id={post.id.toString()}
               title={post.title}
               category={post.category}
             ></Post>
-          ))} */}
+          ))}
           <Link href="/all">All Posts</Link>
         </section>
       </main>
