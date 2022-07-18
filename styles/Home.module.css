@@ -19,6 +19,12 @@
   text-align: center;
 }
 
+.subHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .latest {
   width: 65%;
   display: flex;
