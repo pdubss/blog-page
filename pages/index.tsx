@@ -3,20 +3,21 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
+import convertPropstoArray from "./all";
 
-type PostProps = {
+type postProps = {
   id: number;
   title: string;
   category: string;
   image: string;
 };
 
-const Home: NextPage<{ data: PostProps[] }> = (props) => {
-  console.log(props.data);
-  const postArray = Object.values(props.data);
-  console.log(postArray);
+const Home: NextPage<postProps[]> = (props) => {
+  const postArray = Object.values(props);
+
   const latest = postArray[0];
   const theRest = postArray.filter((post) => post.id !== 1);
+  const nextFour = theRest.slice(0, 4);
 
   return (
     <div className={styles.container}>
@@ -39,7 +40,7 @@ const Home: NextPage<{ data: PostProps[] }> = (props) => {
           }
         </section>
         <section className={styles.secondary}>
-          {theRest.map((post) => (
+          {nextFour.map((post) => (
             <Post
               key={post.id.toString()}
               id={post.id.toString()}
@@ -74,7 +75,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await response.json();
 
   return {
-    props: { data },
+    props: data,
   };
 };
 

@@ -4,7 +4,6 @@
 // };
 
 import styles from "../../styles/Home.module.css";
-import { Link } from "@mui/material";
 import CategoryTag from "../../components/CategoryTag";
 
 type propsType = {
@@ -77,11 +76,16 @@ export async function getStaticPaths() {
           id: "4",
         },
       },
+      {
+        params: {
+          id: "5",
+        },
+      },
     ],
   };
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: any) {
   const pageID = context.params.id;
   const response = await fetch(
     `https://blogpage-posts-default-rtdb.firebaseio.com/posts/p${pageID}.json`
