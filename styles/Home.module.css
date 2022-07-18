@@ -170,3 +170,20 @@
     flex-direction: column;
   }
 }
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.listContainer a:hover {
+  color: #d3d3d3;
+}
+
+.listContainer a {
+  margin: 10px auto;
+}

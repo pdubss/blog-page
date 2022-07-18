@@ -19,6 +19,7 @@ const Header: React.FC = () => {
         <div>
           <HeaderLink href="/">Home</HeaderLink>
           <HeaderLink href="/about">About</HeaderLink>
+          <HeaderLink href="/all">All Posts</HeaderLink>
         </div>
       </Toolbar>
     </AppBar>

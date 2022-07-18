@@ -10,10 +10,10 @@ type postProps = {
 
 const allPosts: React.FC<postProps[]> = (props) => {
   const postArray = Object.values(props);
-  // const postTitles = postArray.map((post) => post.title);
 
   return (
-    <div className={styles.main}>
+    <div className={styles.listContainer}>
+      <h1>All Posts to Date</h1>
       <List>
         {postArray.map((post) => (
           <ListItem key={post.id}>
