@@ -5,6 +5,7 @@
 
 import styles from "../../styles/Home.module.css";
 import { Link } from "@mui/material";
+import CategoryTag from "../../components/CategoryTag";
 
 type propsType = {
   category: string;
@@ -16,14 +17,14 @@ type propsType = {
 const postPage: React.FC<propsType> = (props) => {
   console.log(props);
   return (
-    <main className={styles.main}>
-      <h1>{props.title}</h1>
+    <main className={styles.content}>
+      <h1 className={styles.title}>{props.title}</h1>
       <div className={styles.subHeader}>
-        <Link href="#">{props.category}</Link>{" "}
+        <CategoryTag type={props.category}></CategoryTag>
         {/* still need to redirect href to all props.category page */}
         <span>7/18/2022</span>
       </div>
-      <p>
+      <p className={styles.text}>
         Just some placeholder text for p2 that'll have to be added to firebase
         later.
         <br />
