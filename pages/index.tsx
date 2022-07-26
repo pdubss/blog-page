@@ -4,6 +4,8 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
 import Modal from "../components/Modal";
+import ModalShadow from "../components/ModalShadow";
+import { useState } from "react";
 
 type postProps = {
   id: number;
@@ -13,6 +15,7 @@ type postProps = {
 };
 
 const Home: NextPage<postProps[]> = (props) => {
+  const [showModal, setShowModal] = useState(true);
   const postArray = Object.values(props);
 
   const latest = postArray[0];
@@ -29,7 +32,12 @@ const Home: NextPage<postProps[]> = (props) => {
 
       <main className={styles.main}>
         <section className={styles.latest}>
-          <Modal></Modal>
+          {showModal && (
+            <ModalShadow>
+              <Modal></Modal>
+            </ModalShadow>
+          )}
+
           {
             <Post
               key={latest.id.toString()}

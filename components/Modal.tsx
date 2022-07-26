@@ -9,7 +9,7 @@ const Modal = () => {
         It's still a work in progress but it's regularly being updated whenever
         I have inspiration for new features to implement
       </p>
-      <Button>Close</Button>
+      <Button>Proceed</Button>
     </div>
   );
 };
