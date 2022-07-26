@@ -47,6 +47,30 @@ const postPage: React.FC<propsType> = (props) => {
         for only the post that I needed instead of all of them. Which might not
         make much of a performance difference but is just cleaner and more
         precise, which is something I always aim for.
+        <br />
+        7/26/2022: Surpsingly I think today was the first time I've had to pass
+        a function through props. It took a bit to figure out how to do so with
+        type checking, turns out it mostly just involves adding a property to
+        the props object with type function and passing an event parameter with
+        type React.mouseEvent type and a return type of void. It's something
+        basic like adding a clickHandler to the modal button and modalshadow
+        that feels foreign for me at the moment with Typescript.
+        <br />
+        7/26/22: How I got the modal to only render on first visit was by using
+        the useState and useEffect hooks in combination with localStorage. First
+        the showModal state had to be set to false initially because otherwise
+        the modal would show for a split second before useEffect would take
+        effect. Speaking of which the reason useEffect has to be used is that
+        it's checking the window object for any localStorage entries with the
+        key of 'hasVisited'. If the user had closed the modal or clicked on the
+        modal shadow then a localstorage 'hasVisited' pair would have been
+        created via the closeModalHandler. So if hasVisited exists, regardless
+        of its value it would return truthy and using the ternary operator set
+        the showModal to false otherwise it would be set to true because it was
+        their very first time visiting. So in the end because localStorage pairs
+        can only store strings, and not boolean values I had to use the fact
+        that that pair actually existed to return a truthy value that would then
+        affect the showModal state.
       </p>
     </main>
   );
