@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
-import convertPropstoArray from "./all";
+import Modal from "../components/Modal";
 
 type postProps = {
   id: number;
@@ -29,6 +29,7 @@ const Home: NextPage<postProps[]> = (props) => {
 
       <main className={styles.main}>
         <section className={styles.latest}>
+          <Modal></Modal>
           {
             <Post
               key={latest.id.toString()}
