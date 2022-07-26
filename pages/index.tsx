@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Post from "../components/Post";
 import Modal from "../components/Modal";
 import ModalShadow from "../components/ModalShadow";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type postProps = {
   id: number;
@@ -15,12 +15,23 @@ type postProps = {
 };
 
 const Home: NextPage<postProps[]> = (props) => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const postArray = Object.values(props);
 
   const latest = postArray[0];
   const theRest = postArray.filter((post) => post.id !== 1);
   const nextFour = theRest.slice(0, 4);
+
+  const closeModalHandler = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    setShowModal(false);
+    localStorage.setItem("HasVisited", "true");
+  };
+  useEffect(() => {
+    localStorage.getItem("HasVisited")
+      ? setShowModal(false)
+      : setShowModal(true);
+  });
 
   return (
     <div className={styles.container}>
@@ -33,8 +44,8 @@ const Home: NextPage<postProps[]> = (props) => {
       <main className={styles.main}>
         <section className={styles.latest}>
           {showModal && (
-            <ModalShadow>
-              <Modal></Modal>
+            <ModalShadow closeModal={closeModalHandler}>
+              <Modal closeModal={closeModalHandler}></Modal>
             </ModalShadow>
           )}
 
