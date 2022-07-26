@@ -71,6 +71,15 @@ const postPage: React.FC<propsType> = (props) => {
         can only store strings, and not boolean values I had to use the fact
         that that pair actually existed to return a truthy value that would then
         affect the showModal state.
+        <br/>
+        7/26/22 Just remembered something I learned about MaterialUI when I was making the layout.
+        One of the engineering problems I encountered was with the AppBar component. When its position was set to
+        fixed as I had been doing, the problem can be best described as a z-index issue. The actual page 
+        content would start underneath the AppBar so it wasn't visible. It was being rendered though which confused me 
+        for a bit because I thought the problem was that next.js wasn't even rendering the content at all.
+        Turns out the fix for the content being rendered under the AppBar was to set its position attribute to 
+        'sticky'. That way the AppBar now behaved more how you would expect it to, fixed to the top, but all the other
+        content would begin rendering right underneath in a seamless fashion.
       </p>
     </main>
   );
