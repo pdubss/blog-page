@@ -5,7 +5,7 @@ const CategoryTag: React.FC<{ type: string; key?: string }> = (props) => {
   const router = useRouter();
   let tagColor;
   switch (props.type) {
-    case "BASEBALL":
+    case "SPORTS":
       tagColor = "red";
       break;
     case "CODING":
