@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   );
   const posts: propsType[] = await response.json();
   const paths = Object.values(posts).map((post) => ({
-    params: { id: post.id.toString() },
+    params: { id: post.id?.toString() },
   }));
   return {
     fallback: false,
