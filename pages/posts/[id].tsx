@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 import CategoryTag from "../../components/CategoryTag";
 
@@ -9,12 +9,13 @@ type propsType = {
   title: string;
   content: string;
   date: string;
+  children?: React.ReactNode;
 };
 
 const postPage: React.FC<propsType> = (props) => {
-  const router = useRouter();
-  console.log(router.asPath);
-  console.log(router.pathname);
+  // const router = useRouter();
+  // console.log(router.asPath);
+  // console.log(router.pathname);
   console.log(props);
 
   return (
@@ -29,7 +30,7 @@ const postPage: React.FC<propsType> = (props) => {
       </div>
       <main>
         <img className={styles.contentImage} src={props.image} />
-        <p className={styles.text}>{props.content}</p>
+        {props.content}
       </main>
     </div>
   );

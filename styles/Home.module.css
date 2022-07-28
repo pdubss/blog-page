@@ -46,6 +46,7 @@
 .text {
   padding: 0 1rem;
   line-height: 200%;
+  white-space: pre-wrap;
 }
 
 .latest {
@@ -218,7 +219,7 @@
 }
 
 .contentImage {
-  width: 50%;
+  width: 40%;
   height: auto;
   border-radius: 10px;
   float: left;
