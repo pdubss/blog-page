@@ -1,6 +1,11 @@
 .container {
   padding: 0 2rem;
 }
+.detailPageContainer {
+  padding: 0 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
 .header {
   padding: 1rem 0;
   text-align: center;
@@ -30,12 +35,11 @@
   align-items: center;
 }
 
-.content {
+.detailPageHeader {
   display: flex;
   flex-direction: column;
   text-align: start;
   padding: 2rem 4rem;
-  height: 100vh;
   gap: 2rem;
 }
 
@@ -211,4 +215,12 @@
   z-index: 1101;
   height: 100%;
   width: 100%;
+}
+
+.contentImage {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  float: left;
+  margin-right: 1.5rem;
 }

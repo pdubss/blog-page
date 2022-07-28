@@ -8,6 +8,7 @@ type propsType = {
   image: string;
   title: string;
   content: string;
+  date: string;
 };
 
 const postPage: React.FC<propsType> = (props) => {
@@ -17,15 +18,20 @@ const postPage: React.FC<propsType> = (props) => {
   console.log(props);
 
   return (
-    <main className={styles.content}>
-      <h1 className={styles.title}>{props.title}</h1>
-      <div className={styles.subHeader}>
-        <CategoryTag type={props.category}></CategoryTag>
-        {/* still need to redirect href to all props.category page */}
-        <span>7/18/2022</span>
+    <div className={styles.detailPageContainer}>
+      <div className={styles.detailPageHeader}>
+        <h1 className={styles.title}>{props.title}</h1>
+        <div className={styles.subHeader}>
+          <CategoryTag type={props.category}></CategoryTag>
+          {/* still need to redirect href to all props.category page */}
+          <span>{props.date}</span>
+        </div>
       </div>
-      <p className={styles.text}>{props.content}</p>
-    </main>
+      <main>
+        <img className={styles.contentImage} src={props.image} />
+        <p className={styles.text}>{props.content}</p>
+      </main>
+    </div>
   );
 };
 
