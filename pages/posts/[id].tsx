@@ -17,6 +17,10 @@ const postPage: React.FC<propsType> = (props) => {
   // console.log(router.asPath);
   // console.log(router.pathname);
   console.log(props);
+  const content = JSON.stringify(props.content);
+  console.log(content);
+  const paragraphs = content.split("^");
+  const contents = paragraphs.map((paragraph) => <p>{paragraph}</p>);
 
   return (
     <div className={styles.detailPageContainer}>
@@ -30,7 +34,7 @@ const postPage: React.FC<propsType> = (props) => {
       </div>
       <main>
         <img className={styles.contentImage} src={props.image} />
-        {props.content}
+        {contents}
       </main>
     </div>
   );

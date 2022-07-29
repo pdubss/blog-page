@@ -46,7 +46,9 @@
 .text {
   padding: 0 1rem;
   line-height: 200%;
-  white-space: pre-wrap;
+}
+.lineBreak {
+  white-space: pre-line;
 }
 
 .latest {
