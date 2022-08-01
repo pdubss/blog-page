@@ -14,7 +14,13 @@ const Modal: React.FC<ModalProps> = (props) => {
         It's still a work in progress but it's regularly being updated whenever
         I have inspiration for new features to implement
       </p>
-      <Button onClick={props.closeModal}>Proceed</Button>
+      <Button
+        variant="outlined"
+        sx={{ "&:hover": { backgroundColor: "#aef5ff" }, borderRadius: "5px" }}
+        onClick={props.closeModal}
+      >
+        Proceed
+      </Button>
     </div>
   );
 };
