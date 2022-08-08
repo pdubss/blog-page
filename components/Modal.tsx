@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
-import { Button } from "@mui/material";
 import React from "react";
+import ModalStepper from "./ModalStepper";
 
 interface ModalProps {
   closeModal: (event: React.MouseEvent) => void;
@@ -14,13 +14,8 @@ const Modal: React.FC<ModalProps> = (props) => {
         It's still a work in progress but it's regularly being updated whenever
         I have inspiration for new features to implement
       </p>
-      <Button
-        variant="outlined"
-        sx={{ "&:hover": { backgroundColor: "#aef5ff" }, borderRadius: "5px" }}
-        onClick={props.closeModal}
-      >
-        Proceed
-      </Button>
+      <ModalStepper></ModalStepper>
+
     </div>
   );
 };

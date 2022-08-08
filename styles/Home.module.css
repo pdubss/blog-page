@@ -48,7 +48,6 @@
   line-height: 200%;
 }
 
-
 .latest {
   width: 65%;
   display: flex;
@@ -201,11 +200,17 @@
   z-index: 1102;
   text-align: center;
   width: 600px;
-  height: 200px;
+  height: 250px;
   padding: 0rem 1rem;
   background-color: white;
   border-radius: 10px;
   border: #0070f3 solid 1px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
 .shadow {

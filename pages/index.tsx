@@ -43,7 +43,7 @@ const Home: NextPage<postProps[]> = (props) => {
 
       <main className={styles.main}>
         <section className={styles.latest}>
-          {showModal && (
+          {true && (
             <ModalShadow closeModal={closeModalHandler}>
               <Modal closeModal={closeModalHandler}></Modal>
             </ModalShadow>
